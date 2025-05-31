@@ -34,12 +34,12 @@
 					</tr>
 					<tr>
 						<td> English</td>
-						<td> <input type="number" name="userscore" id="englishScore" class="form-control w-75"  onchange="autoGrader(this.value)" />  <p id="para1"></p>  </td>
-						<td> <input type="text" name="userscore" id="englishGrade" class="form-control w-75" /></td>
+						<td> <input type="number" name="userscore" id="englishScore" class="form-control w-75"  onchange="autoGraderEnglish(this.value)" />  <p id="para1"></p>  </td>
+						<td> <input type="text" name="userscore" id="englishGrade" class="form-control w-75"/> </td>
 					</tr>
 					<tr>
 						<td> Mathematics</td>
-						<td> <input type="number" name="userscore" id="mathScore" class="form-control w-75" /></td>
+						<td> <input type="number" name="userscore" id="mathScore" class="form-control w-75" onchange="autoGraderMath(this.value)" />  <p id="para2"></p>  </td>
 						<td> <input type="text" name="userscore" id="mathGrade" class="form-control w-75" /></td>
 					</tr>
 					<tr>
@@ -93,7 +93,7 @@
 
 
 
-		function autoGrader(score) {
+		function autoGraderEnglish(score) {
 			
 
 			if (score >= 0 && score < 40) {
@@ -110,8 +110,36 @@
 				document.getElementById('englishGrade').value = "A";
 			} else {
 				document.getElementById('para1').innerHTML = 'Invalid score entered';
-				document.getElementById('englishGrade').style.color = 'red';
+				document.getElementById('para1').style.color = 'red';
 			}
+			// document.getElementById('para1').innerHTML = '';
+			// document.getElementById('para1').style.color = 'black';
+
+
+		}
+
+
+		function autoGraderMath(score) {
+			
+
+			if (score >= 0 && score < 40) {
+				document.getElementById('mathGrade').value = 'F';
+			} else if(score >= 40 && score < 45) {
+				document.getElementById('mathGrade').value = "E";
+			} else if(score >= 45 && score < 50) {
+				document.getElementById('mathGrade').value = "D";
+			} else if(score >= 50 && score < 60) {
+				document.getElementById('mathGrade').value = "C";
+			} else if(score >= 60 && score < 70) {
+				document.getElementById('mathGrade').value = "B";
+			} else if(score >= 70 && score <= 100) {
+				document.getElementById('mathGrade').value = "A";
+			} else {
+				document.getElementById('para2').innerHTML = 'Invalid score entered';
+				document.getElementById('para2').style.color = 'red';
+			}
+
+
 		}
 	</script>
 </body>
