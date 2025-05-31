@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<title>Gradesheet</title>
+	<style>
+		/*.row, .col {
+			min-height: 100px;
+			border: 2px solid blue;*/
+		}
+		.totalScore {
+			min-height: 200px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container bg-light">
+		<div class="row">
+			<div class="col">
+				<h1>STUDENT GRADESHEET</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<table border = "1" cellspacing = "10" width = "100%" cellpadding = "10" text-align = "center">
+					<tr>
+						<th>Subject</th>
+						<th>Score</th>
+						<th>Grade</th>
+					</tr>
+					<tr>
+						<td> English</td>
+						<td> <input type="number" name="userscore" id="englishScore" class="form-control w-75"  onchange="autoGrader(this.value)" />  <p id="para1"></p>  </td>
+						<td> <input type="text" name="userscore" id="englishGrade" class="form-control w-75" /></td>
+					</tr>
+					<tr>
+						<td> Mathematics</td>
+						<td> <input type="number" name="userscore" id="mathScore" class="form-control w-75" /></td>
+						<td> <input type="text" name="userscore" id="mathGrade" class="form-control w-75" /></td>
+					</tr>
+					<tr>
+						<td> Chemistry</td>
+						<td> <input type="number" name="userscore" id="chemScore" class="form-control w-75" /></td>
+						<td> <input type="text" name="userscore" id="chemGrade" class="form-control w-75" /></td>
+					</tr>
+					<tr>
+						<td> Biology</td>
+						<td> <input type="number" name="userscore" id="bioScore" class="form-control w-75" /></td>
+						<td> <input type="text" name="userscore" id="bioGrade" class="form-control w-75" /></td>
+					</tr>
+					<tr>
+						<td> French</td>
+						<td> <input type="number" name="userscore" id="frenchScore" class="form-control w-75" /></td>
+						<td> <input type="text" name="userscore" id="frenchGrade" class="form-control w-75" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="my-3 ">
+					<button class="btn btn-danger btn-lg col-6 ">Get Result</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h2>Total : <span></span></h2>
+				<h2>Average : <span></span></h2>
+				<h2>Remarks <span></span></h2>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+	<script>
+		//GLOBAL VARIABLES
+		// var englishScore = Number(document.getElementById('englishScore').value);
+
+
+
+
+
+
+
+
+		function autoGrader(score) {
+			
+
+			if (score >= 0 && score < 40) {
+				document.getElementById('englishGrade').value = 'F';
+			} else if(score >= 40 && score < 45) {
+				document.getElementById('englishGrade').value = "E";
+			} else if(score >= 45 && score < 50) {
+				document.getElementById('englishGrade').value = "D";
+			} else if(score >= 50 && score < 60) {
+				document.getElementById('englishGrade').value = "C";
+			} else if(score >= 60 && score < 70) {
+				document.getElementById('englishGrade').value = "B";
+			} else if(score >= 70 && score <= 100) {
+				document.getElementById('englishGrade').value = "A";
+			} else {
+				document.getElementById('para1').innerHTML = 'Invalid score entered';
+				document.getElementById('englishGrade').style.color = 'red';
+			}
+		}
+	</script>
+</body>
+</html>
