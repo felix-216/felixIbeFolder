@@ -126,14 +126,15 @@
 					document.getElementById(gradeId).value = "A";
 					document.getElementById(errorId).innerHTML = '';
 				} else {
-					document.getElementById(errorId).innerHTML = 'Invalid score entered';
+					document.getElementById(errorId).innerHTML = 'Invalid score entered!';
 					document.getElementById(errorId).style.color = 'red';
 					document.getElementById(gradeId).value = "";
 				}
 
 			
 			} else {
-				alert('enter a valid input')
+				document.getElementById(errorId).innerHTML = 'enter a valid input! ';
+				document.getElementById(errorId).style.color = 'red';
 			}
 		
 		}
