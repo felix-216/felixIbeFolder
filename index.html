@@ -109,16 +109,22 @@
 			if (!isNaN(score) && score !== '') {
 				if (score >= 0 && score < 40) {
 					document.getElementById(gradeId).value = 'F';
+					document.getElementById(errorId).innerHTML = '';
 				} else if(score >= 40 && score < 45) {
 					document.getElementById(gradeId).value = "E";
+					document.getElementById(errorId).innerHTML = '';
 				} else if(score >= 45 && score < 50) {
 					document.getElementById(gradeId).value = "D";
+					document.getElementById(errorId).innerHTML = '';
 				} else if(score >= 50 && score < 60) {
 					document.getElementById(gradeId).value = "C";
+					document.getElementById(errorId).innerHTML = '';
 				} else if(score >= 60 && score < 70) {
 					document.getElementById(gradeId).value = "B";
+					document.getElementById(errorId).innerHTML = '';
 				} else if(score >= 70 && score <= 100) {
 					document.getElementById(gradeId).value = "A";
+					document.getElementById(errorId).innerHTML = '';
 				} else {
 					document.getElementById(errorId).innerHTML = 'Invalid score entered';
 					document.getElementById(errorId).style.color = 'red';
@@ -141,7 +147,7 @@
 			var frenchScore = Number(document.getElementById('frenchScore').value);
 			var total = englishScore + mathScore + chemScore + bioScore + frenchScore;
 
-			if (total >= 1 && total <= 500 && englishScore <= 100 && mathScore <= 100 && chemScore <= 100 && bioScore <= 100 && frenchScore <= 100) {
+			if ((total >= 1) && (total <= 500) && (englishScore <= 100) && (mathScore <= 100) && (chemScore <= 100) && (bioScore <= 100) && (frenchScore <= 100)) {
 				var average = total / 5
 				document.getElementById('span1').innerHTML = total
 				document.getElementById('span2').innerHTML = average
